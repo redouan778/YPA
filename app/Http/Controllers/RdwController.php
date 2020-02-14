@@ -27,10 +27,12 @@ class RdwController extends Controller
      {
          $request = $this->client->get(env('RDW_API_URL') . '?merk=' .  strtoupper($brand));
          $response = $request->getBody()->getContents();
+         $output = json_decode($response, true);
 
-//         dd(json_decode($response,true));
-
-         return $response;
+         return view('carsByBrand', [
+             'autos' => $output,
+             'brand' => $brand
+         ]);
      }
 
 
