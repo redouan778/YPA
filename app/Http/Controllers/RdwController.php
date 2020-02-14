@@ -39,27 +39,14 @@ class RdwController extends Controller
         $request = $this->client->get(env('RDW_API_URL') . '?datum_tenaamstelling=' . $date);
         $response = $request->getBody()->getContents();
         $output = json_decode($response, true);
-        $array = [];
-        echo "<pre>";
-//        var_dump($output);
-        $date = "20200102";
-
-        foreach ($output as $car) {
-            echo "<pre>";
-            $dateTenaamstelling = $car["datum_tenaamstelling"];
 
 
-            if ($dateTenaamstelling == $date) {
-                var_dump($car['datum_tenaamstelling'] . "<br>");
-            }
-        }
-
-        dd();
-
-        return view('welcome', [
-            'data' => $array
+        return view('carsByDate', [
+            'autos' => $output,
+            'datum' => $date
         ]);
     }
+
 
       public function getTenCars()
     {
@@ -72,7 +59,7 @@ class RdwController extends Controller
             $array[] = $data[$i];
         }
 
-        return view('welcome', ['data' =>  $array]);
+        return view('tenCars', ['data' =>  $array]);
     }
 
 }
