@@ -13,7 +13,7 @@
         </tr>
         </thead>
         <tbody>
-          @foreach ($data  as $user)
+          @foreach ($array_ten_cars as $user)
               <tr>
                   <th scope="row">{{$i++}}</th>
                   <td> {{ $user['merk']}}</td>
@@ -22,30 +22,29 @@
               </tr>
           @endforeach
 
-        @foreach ($output as $car)
-            <?php $carBrand = $car['merk'];?>
-            @if ($carBrand == $brand)
-                <tr>
-                    <th scope="row">{{$i++}}</th>
-                    <td> {{ $car['merk']}}</td>
-                    <td> {{ $car['kenteken']}}</td>
-                    <td> {{ $car['voertuigsoort']}}</td>
-                </tr>
-            @endif
-        @endforeach
+          @foreach (output_brand as $car)
+              <?php $carBrand = $car['merk'];?>
+              @if ($carBrand == $brand)
+                  <tr>
+                      <th scope="row">{{$i++}}</th>
+                      <td> {{ $car['merk']}}</td>
+                      <td> {{ $car['kenteken']}}</td>
+                      <td> {{ $car['voertuigsoort']}}</td>
+                  </tr>
+              @endif
+          @endforeach
 
-        @foreach ($output1 as $car)
-            <?php $dateTenaamstelling = $car['datum_tenaamstelling'];?>
-            @if ($dateTenaamstelling  == $datum)
-                <tr>
-                    <th scope="row">{{$i++}}</th>
-                    <td> {{ $car['merk']}}</td>
-                    <td> {{ $car['kenteken']}}</td>
-                    <td> {{ $car['voertuigsoort']}}</td>
-                </tr>
-            @endif
-       @endforeach
-
+          @foreach ($output_date as $car)
+              <?php $dateTenaamstelling = $car['datum_tenaamstelling'];?>
+              @if ($dateTenaamstelling  == $datum)
+                  <tr>
+                      <th scope="row">{{$i++}}</th>
+                      <td> {{ $car['merk']}}</td>
+                      <td> {{ $car['kenteken']}}</td>
+                      <td> {{ $car['voertuigsoort']}}</td>
+                  </tr>
+              @endif
+         @endforeach
         </tbody>
     </table>
 @endsection
