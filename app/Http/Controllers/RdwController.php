@@ -40,7 +40,7 @@ class RdwController extends Controller
        if($i >= 10) {
            break;
        }
-        if(strtolower($record['merk']) === strtolower($brand)) {
+        if(strtoupper($record['merk']) === strtoupper($brand)) {
             $array_ten_brands[] = $record;
             $i++;
         }
@@ -112,4 +112,12 @@ class RdwController extends Controller
 
     return view('car.overview', ['details' => $details]);
   }
+
+
+  public function save()
+  {
+
+  }
+
+
 }

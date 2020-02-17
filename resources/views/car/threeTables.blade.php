@@ -2,11 +2,16 @@
 @section('section')
 
     <?php
-        $t = 1;
         $i =1;
+        $t = 1;
+        $r = 1;
     ?>
+    <div class="col-xs-6">
+        <h2 class="sub-header">Subtitle</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">...
 
-    <table class="table">
+
         <thead class="thead-light">
         <tr>
             <th scope="col">#</th>
@@ -48,7 +53,7 @@
         @foreach ($output_date as $car)
             @if (isset($car['datum_tenaamstelling']) && ($car['datum_tenaamstelling'] === $datum))
                 <tr>
-                    <th scope="row">{{$i++}}</th>
+                    <th scope="row">{{$r++}}</th>
                     <td> {{ $car['merk']}}</td>
                     <td> {{ $car['kenteken']}}</td>
                     <td> {{ $car['voertuigsoort']}}</td>
@@ -82,4 +87,6 @@
         @endforeach
         </tbody>
     </table>
+        </div>
+    </div>
 @endsection
