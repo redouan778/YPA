@@ -7,4 +7,9 @@ Route::get('overview/{id}', 'RdwController@show')->name('overview');
 
 Route::get('opslaan', 'RdwController@store');
 
-Route::get('date/{date}/brand/{brand}', 'RdwController@index');
+Route::get('/', 'RdwController@index');
+
+Route::get('date/{date}/brand/{brand}', 'RdwController@allTables');
+
+
+

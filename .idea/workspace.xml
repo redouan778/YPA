@@ -125,6 +125,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zahid\Desktop\Projects\YPA\resources\views\car" />
+      <recent name="C:\Users\zahid\Desktop\Projects\YPA\resources\views\app" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -168,13 +174,17 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="163" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1581324572900" />
+    <state x="1087" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581934168900">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1087" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1581934168900" />
     <state x="936" y="240" key="run.anything.popup" timestamp="1581329555388">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="936" y="240" key="run.anything.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1581329555388" />
-    <state x="943" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581680320782">
+    <state x="943" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581943066082">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="943" y="225" width="672" height="678" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1581680320782" />
+    <state x="943" y="225" width="672" height="678" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1581943066082" />
   </component>
 </project>

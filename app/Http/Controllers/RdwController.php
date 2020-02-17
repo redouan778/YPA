@@ -19,28 +19,46 @@ class RdwController extends Controller
         $this->client = new Client(['http_errors' => false]);
   }
 
-  public function index($brand, $date){
-    $request_brand = $this->client->get(env('RDW_API_URL') . '?merk=' .  strtoupper($brand));
-    $response_brand = $request_brand->getBody()->getContents();
-    $output_brand = json_decode($response_brand, true);
+  public function index()
+  {
+   return view('index');
+  }
 
-    $request_date = $this->client->get(env('RDW_API_URL') . '?datum_tenaamstelling=' . $date);
-    $response_date = $request_date->getBody()->getContents();
-    $output_date = json_decode($response_date, true);
 
-    $all_cars = $this->client->get(env('RDW_API_URL'));
-    $response_cars = $all_cars->getBody()->getContents();
-    $data = json_decode($response_cars,true);
+    public function allTables($date, $brand){
+    $request = $this->client->get(env('RDW_API_URL'));
+    $response = $request->getBody()->getContents();
+    $output = json_decode($response, true);
+
+    $array_ten_brands = [];
+    $array_ten_dates = [];
     $array_ten_cars = [];
 
-    for ($i = 0; $i < 10; $i++) {
-        $array_ten_cars[] = $data[$i];
+    $i = 0;
+
+    foreach ($output as $record) {
+       if($i >= 10) {
+           break;
+       }
+        if(strtolower($record['merk']) === strtolower($brand)) {
+            $array_ten_brands[] = $record;
+            $i++;
+        }
+
+        if(strtolower($record['datum_tenaamstelling']) === strtolower($date)) {
+            $array_ten_dates[] = $record;
+            $i++;
+        }
     }
 
-    return view('index', [
-        'output_brand' => $output_brand,
-        'output_date' => array($output_date),
-        'array_ten_cars' =>  $array_ten_cars,
+        for ($i = 0; $i < 10; $i++) {
+            $array_ten_cars[] = $output[$i];
+        }
+
+    return view('car.threeTables', [
+        'output_brand' => $array_ten_brands,
+        'output_date' => $array_ten_dates,
+        'output_ten_cars' => $array_ten_cars,
         'brand' => $brand,
         'datum' => $date
     ]);
@@ -52,7 +70,7 @@ class RdwController extends Controller
        $response = $request->getBody()->getContents();
        $output = json_decode($response, true);
 
-       return view('carsByBrand', [
+       return view('car.carsByBrand', [
            'autos' => $output,
            'brand' => $brand
        ]);
@@ -64,7 +82,7 @@ class RdwController extends Controller
      $response = $request->getBody()->getContents();
      $output = json_decode($response, true);
 
-     return view('carsByDate', [
+     return view('car.carsByDate', [
          'autos' => $output,
          'datum' => $date
      ]);
@@ -81,7 +99,7 @@ class RdwController extends Controller
        $array[] = $data[$i];
      }
 
-     return view('tenCars', ['data' =>  $array]);
+     return view('car.tenCars', ['data' =>  $array]);
   }
 
   public function show($id)
@@ -92,6 +110,6 @@ class RdwController extends Controller
 
     $details = $data[$id];
 
-    return view('overview', ['details' => $details]);
+    return view('car.overview', ['details' => $details]);
   }
 }

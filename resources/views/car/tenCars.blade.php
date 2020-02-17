@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('app.layout')
 @section('section')
 
 <?php $i =1; ?>

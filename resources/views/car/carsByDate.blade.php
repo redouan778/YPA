@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('app.layout')
 @section('section')
 
     <?php $i =1; ?>
@@ -15,8 +15,7 @@
         <tbody>
 
         @foreach ($autos as $car)
-            <?php    $dateTenaamstelling = $car["datum_tenaamstelling"];?>
-            @if ($dateTenaamstelling == $datum)
+            @if ($car["datum_tenaamstelling"] == $datum)
                 <tr>
                     <th scope="row">{{$i++}}</th>
                     <td> {{ $car['merk']}}</td>

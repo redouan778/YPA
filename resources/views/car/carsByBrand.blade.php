@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('app.layout')
 @section('section')
 
     <?php $i =1; ?>
@@ -13,18 +13,17 @@
         </tr>
         </thead>
         <tbody>
-        @foreach ($autos as $car)
+        @foreach ($autos as $key => $car)
             <?php $carBrand = $car['merk'];?>
             @if ($carBrand == $brand)
                 <tr>
                     <th scope="row">{{$i++}}</th>
-                    <td> {{ $car['merk']}}</td>
+                    <td>  <a href="{{ route('overview', $key) }}">{{ $car['merk']}} </a></td>
                     <td> {{ $car['kenteken']}}</td>
                     <td> {{ $car['voertuigsoort']}}</td>
                 </tr>
             @endif
         @endforeach
-
         </tbody>
     </table>
 @endsection

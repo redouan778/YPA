@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('app.layout')
 @section('section')
     <table class="table">
         <thead class="thead-light">
