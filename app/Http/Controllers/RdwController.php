@@ -21,7 +21,8 @@ class RdwController extends Controller
 
   public function index()
   {
-   return view('index');
+
+    return view('index');
   }
 
 
@@ -59,8 +60,8 @@ class RdwController extends Controller
         'output_brand' => $array_ten_brands,
         'output_date' => $array_ten_dates,
         'output_ten_cars' => $array_ten_cars,
-        'brand' => $brand,
-        'datum' => $date
+        'brand' => $brand ,
+        'date' => $date
     ]);
   }
 
@@ -112,12 +113,4 @@ class RdwController extends Controller
 
     return view('car.overview', ['details' => $details]);
   }
-
-
-  public function save()
-  {
-
-  }
-
-
 }

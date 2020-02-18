@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="{{ asset('css/app.css')}}" type="text/css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -18,20 +16,7 @@
 </head>
 <body>
 <div class="container">
-{{--    <nav class="navbar navbar-dark bg-primary">--}}
-    <nav class="site-header sticky-top py-1">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2" href="{{route('/')}}" aria-label="Product">
-                <img src="{{asset('/img/rdw.png')}}" class="rdw-logo" alt="rdw-img" width="75" height="27">
-            </a>
 
-            <a class="py-2  d-md-inline-block" href="{{Route('/')}}">Home</a>
-            <a class="py-2 d-none d-md-inline-block" href="{{Route('get-ten-cars')}}">First Ten Cars</a>
-            <a class="py-2 d-none d-md-inline-block" href="{{route('cars-by-date', ['date' => '20130622'])}}">First ten with the date</a>
-            <a class="py-2 d-none d-md-inline-block" href="{{route('cars-by-brand', ['brand' => 'FIAT'])}}">First ten with the brand</a>
-            <a class="py-2 d-none d-md-inline-block" href="{{route('all-tables', ['date' => '20190513', 'brand' => 'FIAT'])}}">All Tables</a>
-        </div>
-    </nav>
 
     @if (count($errors) > 0)
         <div class="alert alert-danger">

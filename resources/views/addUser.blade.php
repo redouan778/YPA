@@ -5,15 +5,7 @@
             <div class="panel-heading">
                 <form action="{{route('store')}}" method="POST" class="form-horizontal">
                     {{ csrf_field() }}
-                    @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+
                     <div class="form-group">
                         <label for="naam"  class="col-sm-2 control-label">name</label>
                         <div class="col-sm-6">
