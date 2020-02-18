@@ -9,6 +9,11 @@ use App\Rules\Lowercase;
 
 class UserController extends Controller
 {
+
+    public function __construct(){
+//        $this->middleware('user.db');
+    }
+
     public function getUsers()
     {
         return User::all();

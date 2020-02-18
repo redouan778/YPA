@@ -8,5 +8,6 @@ Route::get('date/{date}/brand/{brand}', 'RdwController@allTables')->name('all-ta
 
 Route::get('/', 'RdwController@index')->name('/');
 //UserController
+Route::get('get-users', 'UserController@getUsers')->name('get-users')->middleware('user.db');
 Route::get('create', 'UserController@create')->name('create');
 Route::post('store', 'UserController@store')->name('store');
