@@ -7,11 +7,13 @@
         $r = 1;
     ?>
 
-{{--    <div class="container">--}}
-
     <div class="explanation">
         <p>
-            So as you can see
+            So as you can see, you receive <b>Ten Cars</b> from the <b>BRAND</b> FIAT and then cars from
+            the <b>DATE</b> and at last you receive the  <b>FIRST</b> ten car from our API.
+            if you want to change the data you can change the url <b>http://127.0.0.1:8000/date/20190513/brand/FIAT</b>
+            you see after /brand/Fiat you can change it to the brand that you want but dont forget it has to be UPPERCASE!
+            you can also do it the same for the date.
         </p>
     </div>
         <div class="row">

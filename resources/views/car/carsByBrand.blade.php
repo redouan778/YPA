@@ -2,6 +2,13 @@
 @section('section')
 
     <?php $i =1; ?>
+    <div class="explanation">
+        <p>
+            So as you can see, you receive <b>Ten Cars</b> from the <b>BRAND</b> FIAT
+            if you want to change the brand you can change the url <b>http://127.0.0.1:8000/date/20190513/brand/FIAT</b>
+            you see after /brand/Fiat you can change it to the brand that you want but dont forget it has to be UPPERCASE!
+        </p>
+    </div>
 
     <table class="table">
         <thead class="thead-light">
@@ -14,8 +21,7 @@
         </thead>
         <tbody>
         @foreach ($autos as $key => $car)
-            <?php $carBrand = $car['merk'];?>
-            @if ($carBrand == $brand)
+            @if ($car['merk'] == $brand)
                 <tr>
                     <th scope="row">{{$i++}}</th>
                     <td>  <a href="{{ route('overview', $key) }}">{{ $car['merk']}} </a></td>
